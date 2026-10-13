@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <rect x="0.5" y="0.5" width="199" height="47" rx="23.5" fill="#120A2A" fill-opacity="0.8" stroke="url(#paint0_linear)" stroke-width="1"/>
+  <rect x="1" y="1" width="198" height="46" rx="23" fill="url(#paint1_radial)" fill-opacity="0.25"/>
+  <g filter="url(#glow)">
+    <circle cx="26" cy="24" r="12" fill="#380995"/>
+    <ellipse cx="26" cy="20" rx="6" ry="2.5" stroke="#2EFCFF" stroke-width="1.5"/>
+    <path d="M20 20V25C20 26.4 22.7 27.5 26 27.5C29.3 27.5 32 26.4 32 25V20" stroke="#2EFCFF" stroke-width="1.5"/>
+  </g>
+  <text fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="0.02em" x="46" y="22">PostgreSQL &amp; Docker</text>
+  <text fill="#8E70F5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="500" letter-spacing="0.04em" x="46" y="34">DATA INFRASTRUCTURE</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="200" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8E70F5" stop-opacity="0.6"/>
+      <stop offset="0.5" stop-color="#2EFCFF" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#380995" stop-opacity="0.6"/>
+    </linearGradient>
+    <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(100 24) rotate(90) scale(24 100)">
+      <stop stop-color="#2EFCFF" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#120A2A" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="10" y="8" width="32" height="32" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+</svg>
