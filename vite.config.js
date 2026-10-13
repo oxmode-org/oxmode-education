@@ -1,8 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// GitHub Pages phục vụ ở /oxmode-education/ → đặt base theo env hoặc mặc định khi build CI
-export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/oxmode-education/' : '/',
+// GitHub Pages chạy trên subpath /oxmode-education/, còn Vercel chạy ở root /
+const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
+
+export default defineConfig({
+  base: isGitHubPages ? '/oxmode-education/' : '/',
   plugins: [react()],
-}));
+});
