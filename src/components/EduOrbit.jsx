@@ -1093,11 +1093,34 @@ export default function EduOrbit() {
     };
   }, [measureLink, activeId, rotation]);
 
-  const cards = wide ? [active] : NODES;
+  const cards = [active];
 
   return (
     <div className="edu-orbit" ref={rootRef}>
       <OrbitLink path={wide ? link : null} />
+
+      {/* Mobile session navigation pills */}
+      <div className="edu-orbit__mobile-nav" role="tablist" aria-label="Các buổi đào tạo">
+        {NODES.map((node, index) => {
+          const Icon = node.icon;
+          const open = activeId === node.id;
+          return (
+            <button
+              key={node.id}
+              type="button"
+              role="tab"
+              aria-selected={open}
+              className={`edu-orbit__m-pill${open ? ' is-active' : ''}`}
+              onClick={() => jump(index)}
+            >
+              <span className="edu-orbit__m-pill-idx">B{node.id}</span>
+              <Icon size={13} className="edu-orbit__m-pill-icon" />
+              <b className="edu-orbit__m-pill-text">{node.short}</b>
+            </button>
+          );
+        })}
+      </div>
+
       <div className="edu-orbit__stage">
         <svg className="edu-orbit__ring" viewBox="0 0 480 480" aria-hidden="true">
           <circle cx="240" cy="240" r="214" className="edu-orbit__guide" />

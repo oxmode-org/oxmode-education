@@ -12,6 +12,7 @@ const NAV = [
   { href: '#top', label: 'Trang chủ' },
   { href: '#gioi-thieu', label: 'Giới thiệu khoá học' },
   { href: '#noi-dung', label: 'Nội dung khoá học' },
+  { href: '#hinh-thuc', label: 'Hình thức đào tạo' },
   { href: '#phan-hoi', label: 'Phản hồi' },
   { href: '#lien-he', label: 'Liên hệ', contact: true },
 ];
@@ -20,6 +21,18 @@ export default function EducationLanding() {
   const [open, setOpen] = useState(false);
   const [letterStep, setLetterStep] = useState(0);
   const splitRef = useRef(null);
+
+  // Khóa scroll khi mở menu mobile
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [open]);
   const live = (step) => (letterStep === step ? 'on' : 'off');
 
   useEffect(() => {
@@ -129,6 +142,13 @@ export default function EducationLanding() {
             </a>
           ))}
         </nav>
+        {open && (
+          <div
+            className="edu-nav-backdrop"
+            onClick={close}
+            aria-hidden="true"
+          />
+        )}
         </div>
       </header>
 
