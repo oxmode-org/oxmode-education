@@ -97,7 +97,7 @@ export default function EduFormat() {
         <aside className="edu-masu" id="dong-hanh" aria-labelledby="edu-mentor-title">
         <div className="edu-masu__stage">
           <span className="edu-masu__ring" aria-hidden="true" />
-          <img src="/images/team/masu.png" alt="Masu Phan" />
+          <img src="images/team/masu.png" alt="Masu Phan" />
         </div>
         <div className="edu-masu__copy">
           <h2 id="edu-mentor-title">Masu Phan</h2>

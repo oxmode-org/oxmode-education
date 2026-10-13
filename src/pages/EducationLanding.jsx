@@ -92,7 +92,7 @@ export default function EducationLanding() {
       <div className="edu-bg" aria-hidden="true">
         <video
           className="edu-bg__video"
-          src="/education/hero-loop.mp4?v=3"
+          src="education/hero-loop.mp4"
           autoPlay
           muted
           loop
@@ -102,7 +102,7 @@ export default function EducationLanding() {
       <header className="edu-nav">
         <div className="edu-container edu-nav__inner">
           <a className="edu-logo" href="#top" onClick={close}>
-            <img src="/assets/logo-2.svg" alt="OXMODE" />
+            <img src="assets/logo-2.svg" alt="OXMODE" />
           </a>
         <button
           className="edu-burger"
@@ -145,7 +145,7 @@ export default function EducationLanding() {
             </div>
             <img
               className="edu-hero__art"
-              src="/education/hero-mascot.png?v=5"
+              src="education/hero-mascot.png"
               alt=""
             />
           </div>
