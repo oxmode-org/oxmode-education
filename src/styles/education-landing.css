@@ -120,7 +120,7 @@ body.edu-body {
   padding-right: 8%;
 }
 
-.edu-nav nav a {
+.edu-nav nav a:not(.shiny-cta) {
   color: #fff;
   text-decoration: none;
   font-family: var(--font-body, 'Inter', sans-serif);
@@ -133,22 +133,13 @@ body.edu-body {
   transition: color 0.2s ease, background 0.2s ease;
 }
 
-.edu-nav nav a.edu-nav__contact-btn {
-  margin-left: auto;
-  padding: 0.75rem 1.6rem;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.edu-nav nav a:hover,
-.edu-nav nav a:focus-visible {
+.edu-nav nav a:not(.shiny-cta):hover,
+.edu-nav nav a:not(.shiny-cta):focus-visible {
   color: var(--edu-cyan);
   background: rgba(48, 250, 250, 0.12);
 }
 
-.edu-nav nav a[aria-current="page"] {
+.edu-nav nav a:not(.shiny-cta)[aria-current="page"] {
   color: var(--edu-cyan);
 }
 
@@ -506,28 +497,6 @@ body.edu-body {
   .edu-nav nav a:not(.shiny-cta)[aria-current="page"] {
     background: rgba(48, 250, 250, 0.14);
     color: var(--edu-cyan, #30fafa);
-  }
-
-  /* Nút LIÊN HỆ trong mobile menu: đồng bộ 100% với hero/footer .shiny-cta */
-  .edu-nav nav a.edu-nav__contact-btn {
-    margin-top: 14px;
-    margin-left: 0;
-    width: 100%;
-    padding: 1.15rem 2rem;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-align: center;
-    justify-content: center;
-    --shiny-cta-highlight: var(--edu-cyan, #30fafa);
-    --shiny-cta-highlight-subtle: #7ff8f8;
-    --shiny-cta-bg: #0b0528;
-    --shiny-cta-bg-subtle: #190c4f;
-    box-shadow: 0 10px 30px rgba(48, 250, 250, 0.35);
-  }
-  .edu-nav nav a.edu-nav__contact-btn span::before {
-    opacity: 0.85;
   }
 
   .edu-hero__grid {
