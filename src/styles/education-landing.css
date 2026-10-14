@@ -532,7 +532,7 @@ body.edu-body {
   .edu-mentor img { width: 220px; }
 
   .edu-kicker {
-    font-size: 12px;
+    font-size: 12px !important;
   }
 
   /* Chuẩn hóa toàn bộ headings trên mobile = 24px, line-height = 1.67 */
