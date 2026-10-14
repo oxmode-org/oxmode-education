@@ -34,24 +34,29 @@ export default function EduFormat() {
 
   const measure = useCallback(() => {
     const board = boardRef.current;
-    if (!board || board.clientWidth < 480) {
+    if (!board || board.clientWidth < 180) {
       setLink(null);
       return;
     }
     const base = board.getBoundingClientRect();
+    const isMobile = window.innerWidth <= 980;
     const points = pinRefs.current.map((el, index) => {
       if (!el) return null;
       const rect = el.getBoundingClientRect();
-      const y = rect.top - base.top + rect.height * 0.42;
-      return {
-        x: index % 2 === 0 ? rect.right - base.left - 6 : rect.left - base.left + 6,
-        y,
-      };
+      const y = rect.top - base.top + rect.height * 0.45;
+      let x;
+      if (isMobile) {
+        // Neo trực tiếp vào tâm thumbtack trên mobile để tạo đường uốn lượn hình chữ S mềm mại nối từ thẻ này sang thẻ kia
+        x = rect.left - base.left + rect.width * 0.5;
+      } else {
+        x = index % 2 === 0 ? rect.right - base.left - 6 : rect.left - base.left + 6;
+      }
+      return { x, y };
     });
     if (points.some((point) => !point)) return;
     const d = points.slice(1).reduce((path, point, index) => {
       const from = points[index];
-      const bend = (point.x - from.x) * 0.42;
+      const bend = (point.x - from.x) * (isMobile ? 0.65 : 0.42);
       return `${path} C ${from.x + bend},${from.y} ${point.x - bend},${point.y} ${point.x},${point.y}`;
     }, `M ${points[0].x},${points[0].y}`);
     setLink({ w: board.clientWidth, h: board.clientHeight, d });
