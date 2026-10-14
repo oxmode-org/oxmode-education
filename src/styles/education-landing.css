@@ -531,6 +531,10 @@ body.edu-body {
   .edu-mentor { grid-template-columns: 1fr; }
   .edu-mentor img { width: 220px; }
 
+  .edu-kicker {
+    font-size: 12px;
+  }
+
   /* Chuẩn hóa toàn bộ headings trên mobile = 24px, line-height = 1.67 */
   .edu-block h2,
   .edu-block .edu-modules-head h2,
