@@ -134,7 +134,7 @@ export default function EducationLanding() {
             <a
               key={item.href}
               href={item.href}
-              className={item.contact ? 'shiny-cta edu-nav__contact-shiny' : undefined}
+              className={item.contact ? 'shiny-cta edu-foot__shiny-primary edu-nav__contact-btn' : undefined}
               aria-current={item.href === '#top' ? 'page' : undefined}
               onClick={close}
             >
